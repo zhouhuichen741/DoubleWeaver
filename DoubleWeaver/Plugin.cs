@@ -156,33 +156,33 @@ namespace DoubleWeaver
                     (int)sourceActorId == ClientState.LocalPlayer?.ObjectId)
                 {
                     var actionId = Marshal.ReadInt32(a4 + 8);
-                    actionRequestTime.TryGetValue((uint)actionId, out Stopwatch stopwatch);
-                    stopwatch?.Stop();
-                    var actionEffect = (ActionEffect)Marshal.PtrToStructure(a4, typeof(ActionEffect));
-                    if (actionEffect.SourceSequence > 0 && actionEffect.AnimationLockDuration > 0.5)
-                    {
-                        long elapsedTime = 0;
-                        long laggingTime = 0;
-                        if (actionRequestTime.ContainsKey(actionEffect.ActionId))
-                        {
-                            actionRequestTime.Remove(actionEffect.ActionId);
-                            elapsedTime = Math.Max(stopwatch.ElapsedMilliseconds / 2, elapsedTime);
-                            elapsedTime = Math.Max(elapsedTime - 50, 0);
-                            laggingTime = Math.Min(Math.Min(elapsedTime, LastRTT), 300);
-                        }
-                        else
-                        {
-                            laggingTime = Math.Min(LastRTT, 300);
-                        }
-                        var serverAnimationLock = actionEffect.AnimationLockDuration * 1000;
-                        float animationLock = Math.Max(serverAnimationLock - laggingTime, 300);
+                    //actionRequestTime.TryGetValue((uint)actionId, out Stopwatch stopwatch);
+                    //stopwatch?.Stop();
+                    //var actionEffect = (ActionEffect)Marshal.PtrToStructure(a4, typeof(ActionEffect));
+                    //if (actionEffect.SourceSequence > 0 && actionEffect.AnimationLockDuration > 0.5)
+                    //{
+                    //    long elapsedTime = 0;
+                    //    long laggingTime = 0;
+                    //    if (actionRequestTime.ContainsKey(actionEffect.ActionId))
+                    //    {
+                    //        actionRequestTime.Remove(actionEffect.ActionId);
+                    //        elapsedTime = Math.Max(stopwatch.ElapsedMilliseconds / 2, elapsedTime);
+                    //        elapsedTime = Math.Max(elapsedTime - 50, 0);
+                    //        laggingTime = Math.Min(Math.Min(elapsedTime, LastRTT), 300);
+                    //    }
+                    //    else
+                    //    {
+                    //        laggingTime = Math.Min(LastRTT, 300);
+                    //    }
+                    //    var serverAnimationLock = actionEffect.AnimationLockDuration * 1000;
+                    float animationLock = 0.0f; // Math.Max(serverAnimationLock - laggingTime, 300);
                         byte[] bytes = BitConverter.GetBytes(animationLock / 1000);
                         Marshal.Copy(bytes, 0, a4 + 16, bytes.Length);
                         string logLine = $"Status ActionId:{actionEffect.ActionId} Sequence:{actionEffect.SourceSequence} " +
                             $"Elapsed:{elapsedTime}ms RTT:{RTT}ms Lagging:{laggingTime}ms " +
                             $"AnimationLockDuration:{serverAnimationLock}ms -> {animationLock}ms";
                         PluginLog.LogDebug(logLine);
-                    }
+                    //}
                 }
             }
             catch(Exception e)
