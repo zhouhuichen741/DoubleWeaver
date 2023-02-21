@@ -175,13 +175,13 @@ namespace DoubleWeaver
                     //        laggingTime = Math.Min(LastRTT, 300);
                     //    }
                     //    var serverAnimationLock = actionEffect.AnimationLockDuration * 1000;
-                    float animationLock = 0.0f; // Math.Max(serverAnimationLock - laggingTime, 300);
+                    float animationLock = 1.0f; // Math.Max(serverAnimationLock - laggingTime, 300);
                         byte[] bytes = BitConverter.GetBytes(animationLock / 1000);
                         Marshal.Copy(bytes, 0, a4 + 16, bytes.Length);
-                        string logLine = $"Status ActionId:{actionEffect.ActionId} Sequence:{actionEffect.SourceSequence} " +
-                            $"Elapsed:{elapsedTime}ms RTT:{RTT}ms Lagging:{laggingTime}ms " +
-                            $"AnimationLockDuration:{serverAnimationLock}ms -> {animationLock}ms";
-                        PluginLog.LogDebug(logLine);
+                        //string logLine = $"Status ActionId:{actionEffect.ActionId} Sequence:{actionEffect.SourceSequence} " +
+                        //    $"Elapsed:{elapsedTime}ms RTT:{RTT}ms Lagging:{laggingTime}ms " +
+                        //    $"AnimationLockDuration:{serverAnimationLock}ms -> {animationLock}ms";
+                        //PluginLog.LogDebug(logLine);
                     //}
                 }
             }

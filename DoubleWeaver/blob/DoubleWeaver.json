@@ -1,0 +1,20 @@
+{
+  "Author": "B",
+  "Name": "Double Weaver Hack",
+  "InternalName": "DoubleWeaver",
+  "AssemblyVersion": "1.0.6.1",
+  "Description": "Double weaving in high latency network.",
+  "ApplicableVersion": "any",
+  "RepoUrl": "https://github.com/ccds0614/DoubleWeaver",
+  "Tags": [
+    "B",
+    "doubleweaver"
+  ],
+  "DalamudApiLevel": 8,
+  "LoadRequiredState": 0,
+  "LoadSync": false,
+  "LoadPriority": 0,
+  "IconUrl": "https://github.com/ccds0614/DoubleWeaver/blob/master/images/icon.png",
+  "Punchline": "Double weaving with high ping",
+  "AcceptsFeedback": true
+}
