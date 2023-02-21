@@ -1,0 +1,12 @@
+{
+  "Author": "B",
+  "Name": "Double Weaver Hack",
+  "Punchline": "Double weaving with high ping",
+  "Description": "Double weaving in high latency network.",
+  "InternalName": "DoubleWeaver",
+  "AssemblyVersion": "1.0.6.2",
+  "RepoUrl": "https://github.com/ccds0614/DoubleWeaver",
+  "IconUrl": "https://github.com/ccds0614/DoubleWeaver/blob/master/images/icon.png",
+  "ApplicableVersion": "any",
+  "Tags": [ "B", "doubleweaver"],
+}
