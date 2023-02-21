@@ -17,4 +17,7 @@
   "IconUrl": "https://github.com/ccds0614/DoubleWeaver/blob/master/images/icon.png",
   "Punchline": "Double weaving with high ping",
   "AcceptsFeedback": true
+  "DownloadLinkInstall": "https://github.com/ccds0614/DoubleWeaver/blob/latest.zip",
+  "DownloadLinkTesting": "https://github.com/ccds0614/DoubleWeaver/blob/latest.zip",
+  "DownloadLinkUpdate": "https://github.com/ccds0614/DoubleWeaver/blob/latest.zip"
 }
