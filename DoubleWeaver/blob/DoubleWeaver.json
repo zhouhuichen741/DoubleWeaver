@@ -5,7 +5,7 @@
   "AssemblyVersion": "1.0.6.1",
   "Description": "Double weaving in high latency network.",
   "ApplicableVersion": "any",
-  "RepoUrl": "https://github.com/ccds0614/DoubleWeaver",
+  "RepoUrl": "https://github.com/zhouhuichen741/DoubleWeaver",
   "Tags": [
     "B",
     "doubleweaver"
@@ -14,7 +14,7 @@
   "LoadRequiredState": 0,
   "LoadSync": false,
   "LoadPriority": 0,
-  "IconUrl": "https://github.com/ccds0614/DoubleWeaver/blob/master/images/icon.png",
+  "IconUrl": "https://raw.githubusercontent.com/zhouhuichen741/DoubleWeaver/master/DoubleWeaver/blob/icon.png",
   "Punchline": "Double weaving with high ping",
   "AcceptsFeedback": true,
   "IsHide": "False",
