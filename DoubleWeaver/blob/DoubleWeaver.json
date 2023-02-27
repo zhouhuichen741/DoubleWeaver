@@ -1,6 +1,6 @@
 [
         {
-        "Author": "B",
+        "Author": "Bluefissure",
         "Name": "Double Weaver Hack",
         "InternalName": "DoubleWeaver",
         "AssemblyVersion": "1.0.6.1",
@@ -8,7 +8,7 @@
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/zhouhuichen741/DoubleWeaver",
         "Tags": [
-            "B",
+            "Bluefissure",
             "doubleweaver"
         ],
         "DalamudApiLevel": 8,
