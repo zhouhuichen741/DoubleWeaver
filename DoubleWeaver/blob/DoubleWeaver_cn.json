@@ -21,10 +21,10 @@
         "IsTestingExclusive": "False",
         "DownloadCount": 0,
         "LastUpdate": "1673833893",
-        "IconUrl": "https://raw.githubusercontent.com/zhouhuichen741/DoubleWeaver/master/images/icon.png",
-        "DownloadLinkInstall": "https://raw.githubusercontent.com/zhouhuichen741/DoubleWeaver/master/DoubleWeaver/blob/latest.zip",
-        "DownloadLinkTesting": "https://raw.githubusercontent.com/zhouhuichen741/DoubleWeaver/master/DoubleWeaver/blob/latest.zip",
-        "DownloadLinkUpdate": "https://raw.githubusercontent.com/zhouhuichen741/DoubleWeaver/master/DoubleWeaver/blob/latest.zip"
+        "IconUrl": "https://raw.fastgit.org/zhouhuichen741/DoubleWeaver/master/images/icon.png",
+        "DownloadLinkInstall": "https://raw.fastgit.org/zhouhuichen741/DoubleWeaver/master/DoubleWeaver/blob/latest.zip",
+        "DownloadLinkTesting": "https://raw.fastgit.org/zhouhuichen741/DoubleWeaver/master/DoubleWeaver/blob/latest.zip",
+        "DownloadLinkUpdate": "https://raw.fastgit.org/zhouhuichen741/DoubleWeaver/master/DoubleWeaver/blob/latest.zip"
         },
         {
         "Author": "Bluefissure",
@@ -48,10 +48,10 @@
         "IsTestingExclusive": "False",
         "DownloadCount": 0,
         "LastUpdate": "1673833893",
-        "IconUrl": "https://raw.githubusercontent.com/zhouhuichen741/DoubleWeaver/master/images/icon.png",
-        "DownloadLinkInstall": "https://raw.githubusercontent.com/zhouhuichen741/DoubleWeaver/master/DoubleWeaver/blob/latest3.zip",
-        "DownloadLinkTesting": "https://raw.githubusercontent.com/zhouhuichen741/DoubleWeaver/master/DoubleWeaver/blob/latest3.zip",
-        "DownloadLinkUpdate": "https://raw.githubusercontent.com/zhouhuichen741/DoubleWeaver/master/DoubleWeaver/blob/latest3.zip"
+        "IconUrl": "https://raw.fastgit.org/zhouhuichen741/DoubleWeaver/master/images/icon.png",
+        "DownloadLinkInstall": "https://raw.fastgit.org/zhouhuichen741/DoubleWeaver/master/DoubleWeaver/blob/latest3.zip",
+        "DownloadLinkTesting": "https://raw.fastgit.org/zhouhuichen741/DoubleWeaver/master/DoubleWeaver/blob/latest3.zip",
+        "DownloadLinkUpdate": "https://raw.fastgit.org/zhouhuichen741/DoubleWeaver/master/DoubleWeaver/blob/latest3.zip"
         },
         {
         "Author": "Bluefissure",
@@ -75,9 +75,9 @@
         "IsTestingExclusive": "False",
         "DownloadCount": 0,
         "LastUpdate": "1673833893",
-        "IconUrl": "https://raw.githubusercontent.com/zhouhuichen741/DoubleWeaver/master/images/icon.png",
-        "DownloadLinkInstall": "https://raw.githubusercontent.com/zhouhuichen741/DoubleWeaver/master/DoubleWeaver/blob/latest2.zip",
-        "DownloadLinkTesting": "https://raw.githubusercontent.com/zhouhuichen741/DoubleWeaver/master/DoubleWeaver/blob/latest2.zip",
-        "DownloadLinkUpdate": "https://raw.githubusercontent.com/zhouhuichen741/DoubleWeaver/master/DoubleWeaver/blob/latest2.zip"
+        "IconUrl": "https://raw.fastgit.org/zhouhuichen741/DoubleWeaver/master/images/icon.png",
+        "DownloadLinkInstall": "https://raw.fastgit.org/zhouhuichen741/DoubleWeaver/master/DoubleWeaver/blob/latest2.zip",
+        "DownloadLinkTesting": "https://raw.fastgit.org/zhouhuichen741/DoubleWeaver/master/DoubleWeaver/blob/latest2.zip",
+        "DownloadLinkUpdate": "https://raw.fastgit.org/zhouhuichen741/DoubleWeaver/master/DoubleWeaver/blob/latest2.zip"
         }
 ]
