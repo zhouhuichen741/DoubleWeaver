@@ -72,9 +72,9 @@
 	},
 	{
         "Author": "Anna",
-        "Name": "Peepingtom改",
+        "Name": "PeepingtomEX",
         "Description": "看看你的",
-        "InternalName": "PeepingTomS",
+        "InternalName": "PeepingTomEX",
         "AssemblyVersion": "1.7.17",
         "ApplicableVersion": "any",
         "DalamudApiLevel": 10,
