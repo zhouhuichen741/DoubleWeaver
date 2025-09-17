@@ -1,58 +1,4 @@
 [
-        {
-        "Author": "Bluefissure",
-        "Name": "Double Weaver Hack",
-        "InternalName": "DoubleWeaver",
-        "AssemblyVersion": "1.0.9.0",
-        "Description": "只要手速够快就能十插或者更多.",
-        "ApplicableVersion": "any",
-        "RepoUrl": "https://github.com/zhouhuichen741/DoubleWeaver",
-        "Tags": [
-            "Bluefissure",
-            "doubleweaver"
-        ],
-        "DalamudApiLevel": 12,
-        "LoadRequiredState": 0,
-        "LoadSync": false,
-        "LoadPriority": 0,
-        "Punchline": "让你能在一个GCD里插入更多能力技.",
-        "AcceptsFeedback": true,
-        "IsHide": "False",
-        "IsTestingExclusive": "False",
-        "DownloadCount": 0,
-        "LastUpdate": "1673833893",
-        "IconUrl": "https://raw.githubusercontent.com/zhouhuichen741/DoubleWeaver/master/images/icon.png",
-        "DownloadLinkInstall": "https://raw.githubusercontent.com/zhouhuichen741/DoubleWeaver/master/DoubleWeaver/blob/latest.zip",
-        "DownloadLinkTesting": "https://raw.githubusercontent.com/zhouhuichen741/DoubleWeaver/master/DoubleWeaver/blob/latest.zip",
-        "DownloadLinkUpdate": "https://raw.githubusercontent.com/zhouhuichen741/DoubleWeaver/master/DoubleWeaver/blob/latest.zip"
-        },
-        {
-        "Author": "Bluefissure",
-        "Name": "Double Weaver Super Hack",
-        "InternalName": "DoubleWeaver",
-        "AssemblyVersion": "1.0.9.0",
-        "Description": "只要手速够快就能百插或者更多.",
-        "ApplicableVersion": "any",
-        "RepoUrl": "https://github.com/zhouhuichen741/DoubleWeaver",
-        "Tags": [
-            "Bluefissure",
-            "doubleweaver"
-        ],
-        "DalamudApiLevel": 12,
-        "LoadRequiredState": 0,
-        "LoadSync": false,
-        "LoadPriority": 0,
-        "Punchline": "让你能在一个GCD里插入更多能力技.",
-        "AcceptsFeedback": true,
-        "IsHide": "False",
-        "IsTestingExclusive": "False",
-        "DownloadCount": 0,
-        "LastUpdate": "1673833893",
-        "IconUrl": "https://raw.githubusercontent.com/zhouhuichen741/DoubleWeaver/master/images/icon.png",
-        "DownloadLinkInstall": "https://raw.githubusercontent.com/zhouhuichen741/DoubleWeaver/master/DoubleWeaver/blob/latest3.zip",
-        "DownloadLinkTesting": "https://raw.githubusercontent.com/zhouhuichen741/DoubleWeaver/master/DoubleWeaver/blob/latest3.zip",
-        "DownloadLinkUpdate": "https://raw.githubusercontent.com/zhouhuichen741/DoubleWeaver/master/DoubleWeaver/blob/latest3.zip"
-        },
 	{
         "Author": "Anna",
         "Name": "Peeping Tom S",
@@ -67,42 +13,15 @@
         "LastUpdate": 0,
         "LoadPriority": 69420,
         "IconUrl": "https://raw.githubusercontent.com/ottercorp/DalamudPluginsD17/main/stable/PeepingTom/images/icon.png",
-        "DownloadLinkInstall": "https://raw.githubusercontent.com/zhouhuichen741/DoubleWeaver/master/DoubleWeaver/blob/latest4.zip",
-        "DownloadLinkTesting": "https://raw.githubusercontent.com/zhouhuichen741/DoubleWeaver/master/DoubleWeaver/blob/latest4.zip",
-        "DownloadLinkUpdate": "https://raw.githubusercontent.com/zhouhuichen741/DoubleWeaver/master/DoubleWeaver/blob/latest4.zip"
-	},
-        {
-        "Author": "Bluefissure",
-        "Name": "Double Weaver Ex",
-        "InternalName": "DoubleWeaver",
-        "AssemblyVersion": "1.0.9.0",
-        "Description": "只要手速够快就能三插或者更多.",
-        "ApplicableVersion": "any",
-        "RepoUrl": "https://github.com/zhouhuichen741/DoubleWeaver",
-        "Tags": [
-            "Bluefissure",
-            "doubleweaver"
-        ],
-        "DalamudApiLevel": 12,
-        "LoadRequiredState": 0,
-        "LoadSync": false,
-        "LoadPriority": 0,
-        "Punchline": "让你能在一个GCD里插入更多能力技.",
-        "AcceptsFeedback": true,
-        "IsHide": "False",
-        "IsTestingExclusive": "False",
-        "DownloadCount": 0,
-        "LastUpdate": "1673833893",
-        "IconUrl": "https://raw.githubusercontent.com/zhouhuichen741/DoubleWeaver/master/images/icon.png",
         "DownloadLinkInstall": "https://raw.githubusercontent.com/zhouhuichen741/DoubleWeaver/master/DoubleWeaver/blob/latest2.zip",
         "DownloadLinkTesting": "https://raw.githubusercontent.com/zhouhuichen741/DoubleWeaver/master/DoubleWeaver/blob/latest2.zip",
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/zhouhuichen741/DoubleWeaver/master/DoubleWeaver/blob/latest2.zip"
-        },
+	},
 	{
         "Author": "Bluefissure",
         "Name": "Double Weaver Ex Hack",
         "InternalName": "DoubleWeaver",
-        "AssemblyVersion": "1.0.9.0",
+        "AssemblyVersion": "1.0.9.1",
         "Description": "兼容PVP和PVE,在PVE中只要手速够快就能三插或者更多,在PVP中只要手速够快就能十插或者更多.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/zhouhuichen741/DoubleWeaver",
@@ -110,7 +29,7 @@
             "Bluefissure",
             "doubleweaver"
         ],
-        "DalamudApiLevel": 12,
+        "DalamudApiLevel": 13,
         "LoadRequiredState": 0,
         "LoadSync": false,
         "LoadPriority": 0,
@@ -121,8 +40,8 @@
         "DownloadCount": 0,
         "LastUpdate": "1673833893",
         "IconUrl": "https://raw.githubusercontent.com/zhouhuichen741/DoubleWeaver/master/images/icon.png",
-        "DownloadLinkInstall": "https://raw.githubusercontent.com/zhouhuichen741/DoubleWeaver/master/DoubleWeaver/blob/latest5.zip",
-        "DownloadLinkTesting": "https://raw.githubusercontent.com/zhouhuichen741/DoubleWeaver/master/DoubleWeaver/blob/latest5.zip",
-        "DownloadLinkUpdate": "https://raw.githubusercontent.com/zhouhuichen741/DoubleWeaver/master/DoubleWeaver/blob/latest5.zip"
+        "DownloadLinkInstall": "https://raw.githubusercontent.com/zhouhuichen741/DoubleWeaver/master/DoubleWeaver/blob/latest.zip",
+        "DownloadLinkTesting": "https://raw.githubusercontent.com/zhouhuichen741/DoubleWeaver/master/DoubleWeaver/blob/latest.zip",
+        "DownloadLinkUpdate": "https://raw.githubusercontent.com/zhouhuichen741/DoubleWeaver/master/DoubleWeaver/blob/latest.zip"
         }
 ]
