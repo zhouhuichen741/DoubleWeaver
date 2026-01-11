@@ -21,7 +21,7 @@
         "Author": "Bluefissure",
         "Name": "Double Weaver Ex Hack",
         "InternalName": "DoubleWeaver",
-        "AssemblyVersion": "1.0.9.7",
+        "AssemblyVersion": "1.0.9.8",
         "Description": "兼容PVP和PVE,在PVE中只要手速够快就能三插或者更多,在PVP中只要手速够快就能十插或者更多.",
         "ApplicableVersion": "any",
         "RepoUrl": "https://github.com/zhouhuichen741/DoubleWeaver",
