@@ -1,10 +1,11 @@
-name: Sync PluginMaster
+name: Sync Only PluginMaster.json (Fixed Path Error)
 
 on:
   schedule:
-    - cron: '0 * * * *'
-  workflow_dispatch:
+    - cron: '0 * * * *'  # 每小时执行一次
+  workflow_dispatch:     # 手动触发测试
 
+# 仅赋予必要的推送权限
 permissions:
   contents: write
 
@@ -12,40 +13,61 @@ jobs:
   sync-single-file:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout only latest version (minimal clone)
+      # 1. 轻量化克隆仓库（仅拉最新版本+仅下载目标文件）
+      - name: Checkout minimal repo (only target file)
         uses: actions/checkout@v4
         with:
-          ref: master
-          fetch-depth: 1
+          ref: master  # 替换为你的仓库主分支（main/master）
+          fetch-depth: 1  # 只拉最新1次提交，最快
           sparse-checkout: |
-            PluginMaster.json
+            # 👇 这里填写目标文件的真实路径，示例：
+            # 如果文件在根目录：PluginMaster.json
+            # 如果文件在blob文件夹下：blob/PluginMaster.json
+            PluginMaster.json  
 
-      - name: Download and replace ONLY PluginMaster.json
+      # 2. 下载远程文件并覆盖（明确指定路径，避免变量为空）
+      - name: Download and replace PluginMaster.json only
         run: |
+          # 固定目标文件路径（手动写死，避免变量为空，核心修复点）
+          TARGET_FILE="PluginMaster.json"  # ❗ 务必确认路径正确，比如blob/PluginMaster.json
           REMOTE_FILE="https://aonyx.ffxiv.wang/Plugin/PluginMaster"
-          TARGET_FILE="PluginMaster.json"
 
+          # 创建目标目录（如果文件在子目录，比如blob/，确保目录存在）
+          mkdir -p $(dirname "$TARGET_FILE")
+
+          # 下载原始JSON文件，直接覆盖
+          echo "🔄 Downloading remote file to $TARGET_FILE"
           curl -fsSL "$REMOTE_FILE" -o "$TARGET_FILE"
 
-          if [ ! -f "$TARGET_FILE" ]; then
-            echo "❌ Only $TARGET_FILE download failed"
+          # 强制检查文件是否存在+非空，避免空文件
+          if [ ! -s "$TARGET_FILE" ]; then
+            echo "❌ Error: $TARGET_FILE is empty or not found"
             exit 1
           fi
-          echo "✅ Only $TARGET_FILE downloaded (other files untouched)"
+          echo "✅ $TARGET_FILE downloaded successfully (raw JSON, no conversion)"
 
-      - name: Commit ONLY $TARGET_FILE changes
+      # 3. 仅提交目标文件的变更（绝对不碰其他文件）
+      - name: Commit only PluginMaster.json changes
         run: |
+          # 固定目标文件路径（和上一步保持一致）
+          TARGET_FILE="PluginMaster.json"  # ❗ 同步修改路径，比如blob/PluginMaster.json
+
+          # 配置Git用户信息
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
+          # 仅添加目标文件（核心：只操作这一个文件）
           git add "$TARGET_FILE"
 
+          # 仅当文件有变更时提交
           if git diff --cached --quiet; then
-            echo "ℹ️ Only $TARGET_FILE has no changes, skip commit"
+            echo "ℹ️ No changes to $TARGET_FILE, skip commit"
             exit 0
           fi
 
-          git commit -m "Auto sync ONLY PluginMaster.json (no other files) - $(date -u)"
+          # 提交（仅这个文件的变更）
+          git commit -m "Auto sync ONLY $TARGET_FILE (raw JSON) - $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
           
+          # 推送到仓库
           git push origin master
-          echo "✅ Only PluginMaster.json synced (all other files remain unchanged)!"
+          echo "✅ Only $TARGET_FILE synced! All other files are unchanged."
