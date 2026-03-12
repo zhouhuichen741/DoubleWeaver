@@ -1,4 +1,4 @@
-name: Sync PluginMaster
+name: Sync Only PluginMaster.json (No Other Files)
 
 on:
   schedule:
@@ -9,63 +9,43 @@ permissions:
   contents: write
 
 jobs:
-  sync-file-api:
+  sync-single-file:
     runs-on: ubuntu-latest
     steps:
-      - name: Get remote file content (raw)
-        id: get_content
+      - name: Checkout only latest version (minimal clone)
+        uses: actions/checkout@v4
+        with:
+          ref: master
+          fetch-depth: 1
+          sparse-checkout: |
+            PluginMaster.json
+
+      - name: Download and replace ONLY PluginMaster.json
         run: |
-          REMOTE_CONTENT=$(curl -sSL --fail "https://aonyx.ffxiv.wang/Plugin/PluginMaster")
-          if [ -z "$REMOTE_CONTENT" ]; then
-            echo "❌ Remote content is empty, exit"
+          REMOTE_FILE="https://aonyx.ffxiv.wang/Plugin/PluginMaster"
+          TARGET_FILE="PluginMaster.json"
+
+          curl -fsSL "$REMOTE_FILE" -o "$TARGET_FILE"
+
+          if [ ! -f "$TARGET_FILE" ]; then
+            echo "❌ Only $TARGET_FILE download failed"
             exit 1
           fi
-          echo -n "$REMOTE_CONTENT" | base64 -w 0 > /tmp/base64_content.txt
-          echo "base64_file=/tmp/base64_content.txt" >> $GITHUB_OUTPUT
-        shell: bash
+          echo "✅ Only $TARGET_FILE downloaded (other files untouched)"
 
-      - name: Create/Update file via GitHub API
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          OWNER: zhouhuichen741
-          REPO: DoubleWeaver
-          FILE_PATH: PluginMaster.json
-          BRANCH: master
+      - name: Commit ONLY $TARGET_FILE changes
         run: |
-          API_URL="https://api.github.com/repos/$OWNER/$REPO/contents/$FILE_PATH"
-          
-          FILE_SHA=$(curl -sSL \
-            -H "Accept: application/vnd.github+json" \
-            -H "Authorization: token $GITHUB_TOKEN" \
-            "$API_URL" \
-            | jq -r '.sha // empty')
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
-          PAYLOAD=$(jq -n \
-            --arg message "Auto sync PluginMaster - $(date -u +'%Y-%m-%d %H:%M:%S UTC')" \
-            --arg sha "$FILE_SHA" \
-            --arg branch "$BRANCH" \
-            --slurpfile content ${{ steps.get_content.outputs.base64_file }} \
-            '{
-              message: $message,
-              content: $content[0],
-              sha: $sha,
-              branch: $branch
-            }')
-          
-          RESPONSE=$(curl -sSL -X PUT \
-            -H "Accept: application/vnd.github+json" \
-            -H "Authorization: token $GITHUB_TOKEN" \
-            -H "Content-Type: application/json" \
-            "$API_URL" \
-            -d "$PAYLOAD")
+          git add "$TARGET_FILE"
 
-          echo "API Response: $RESPONSE"
-          if echo "$RESPONSE" | jq -e '.commit' > /dev/null; then
-            echo "✅ File synced successfully via API!"
-          else
-            ERROR_MSG=$(echo "$RESPONSE" | jq -r '.message // "Unknown error"')
-            ERROR_DETAILS=$(echo "$RESPONSE" | jq -r '.errors // "No details"')
-            echo "❌ Sync failed: $ERROR_MSG"
-            echo "❌ Error details: $ERROR_DETAILS"
-            exit 1
+          if git diff --cached --quiet; then
+            echo "ℹ️ Only $TARGET_FILE has no changes, skip commit"
+            exit 0
           fi
+
+          git commit -m "Auto sync ONLY PluginMaster.json (no other files) - $(date -u)"
+          
+          git push origin master
+          echo "✅ Only PluginMaster.json synced (all other files remain unchanged)!"
