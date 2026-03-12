@@ -1,5 +1,5 @@
 [
-  {111
+  {
     "Author": "Sylf", 
     "Name": "Macro Recorded", 
     "InternalName": "MacroRecorded", 
@@ -8531,7 +8531,7 @@
     "FeedbackMessage": null, 
     "FeedbackWebhook": null, 
     "IsTestingExclusive": false, 
-    "DownloadCount": 23545, 
+    "DownloadCount": 23546, 
     "LastUpdate": 1766174493, 
     "DownloadLinkInstall": "https://aonyx.ffxiv.wang/Plugin/Download/WorkshopOptimizerPlugin?isUpdate=False&isTesting=False&branch=api14", 
     "DownloadLinkUpdate": "https://aonyx.ffxiv.wang/Plugin/Download/WorkshopOptimizerPlugin?isUpdate=True&isTesting=False&branch=api14", 
