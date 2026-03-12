@@ -5,7 +5,6 @@ on:
     - cron: '0 * * * *'
   workflow_dispatch:
 
-
 permissions:
   contents: write
 
@@ -21,8 +20,8 @@ jobs:
             echo "❌ Remote content is empty, exit"
             exit 1
           fi
-          BASE64_CONTENT=$(echo -n "$REMOTE_CONTENT" | base64 -w 0)
-          echo "base64_content=$BASE64_CONTENT" >> $GITHUB_OUTPUT
+          echo -n "$REMOTE_CONTENT" | base64 -w 0 > /tmp/base64_content.txt
+          echo "base64_file=/tmp/base64_content.txt" >> $GITHUB_OUTPUT
         shell: bash
 
       - name: Create/Update file via GitHub API
@@ -34,32 +33,32 @@ jobs:
           BRANCH: master
         run: |
           API_URL="https://api.github.com/repos/$OWNER/$REPO/contents/$FILE_PATH"
-
+          
           FILE_SHA=$(curl -sSL \
             -H "Accept: application/vnd.github+json" \
             -H "Authorization: token $GITHUB_TOKEN" \
             "$API_URL" \
             | jq -r '.sha // empty')
-          
+
           PAYLOAD=$(jq -n \
             --arg message "Auto sync PluginMaster - $(date -u +'%Y-%m-%d %H:%M:%S UTC')" \
-            --arg content "${{ steps.get_content.outputs.base64_content }}" \
             --arg sha "$FILE_SHA" \
             --arg branch "$BRANCH" \
+            --slurpfile content ${{ steps.get_content.outputs.base64_file }} \
             '{
               message: $message,
-              content: $content,
+              content: $content[0],
               sha: $sha,
               branch: $branch
             }')
-
+          
           RESPONSE=$(curl -sSL -X PUT \
             -H "Accept: application/vnd.github+json" \
             -H "Authorization: token $GITHUB_TOKEN" \
             -H "Content-Type: application/json" \
             "$API_URL" \
             -d "$PAYLOAD")
-          
+
           echo "API Response: $RESPONSE"
           if echo "$RESPONSE" | jq -e '.commit' > /dev/null; then
             echo "✅ File synced successfully via API!"
