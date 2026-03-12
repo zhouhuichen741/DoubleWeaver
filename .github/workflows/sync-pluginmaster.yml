@@ -1,4 +1,4 @@
-name: Sync PluginMaster via GitHub API (No Local Download)
+name: Sync PluginMaster
 
 on:
   schedule:
