@@ -13,7 +13,6 @@ jobs:
         id: get_remote_content
         run: |
           REMOTE_CONTENT=$(curl -sSL "https://aonyx.ffxiv.wang/Plugin/PluginMaster")
-          ESCAPED_CONTENT=$(echo "$REMOTE_CONTENT" | jq -R .)
           echo "content=$ESCAPED_CONTENT" >> $GITHUB_OUTPUT
         shell: bash
 
