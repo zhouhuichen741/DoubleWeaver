@@ -5,51 +5,68 @@ on:
     - cron: '0 * * * *'
   workflow_dispatch:
 
+
+permissions:
+  contents: write
+
 jobs:
-  sync-via-api:
+  sync-file-api:
     runs-on: ubuntu-latest
     steps:
-      - name: Get remote file content
-        id: get_remote_content
+      - name: Get remote file content (raw)
+        id: get_content
         run: |
-          REMOTE_CONTENT=$(curl -sSL "https://aonyx.ffxiv.wang/Plugin/PluginMaster")
-          echo "content=$ESCAPED_CONTENT" >> $GITHUB_OUTPUT
+          REMOTE_CONTENT=$(curl -sSL --fail "https://aonyx.ffxiv.wang/Plugin/PluginMaster")
+          if [ -z "$REMOTE_CONTENT" ]; then
+            echo "❌ Remote content is empty, exit"
+            exit 1
+          fi
+          BASE64_CONTENT=$(echo -n "$REMOTE_CONTENT" | base64 -w 0)
+          echo "base64_content=$BASE64_CONTENT" >> $GITHUB_OUTPUT
         shell: bash
 
-      - name: Update file via GitHub API
+      - name: Create/Update file via GitHub API
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          REPO_OWNER: zhouhuichen741
-          REPO_NAME: DoubleWeaver
-          FILE_PATH: DoubleWeaver/blob/PluginMaster.json
-          COMMIT_MSG: "Auto sync PluginMaster (API) - $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
+          OWNER: zhouhuichen741
+          REPO: DoubleWeaver
+          FILE_PATH: PluginMaster.json
+          BRANCH: master
         run: |
-          FILE_SHA=$(curl -sSL \
-            -H "Authorization: token $GITHUB_TOKEN" \
-            "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/contents/$FILE_PATH" \
-            | jq -r '.sha // empty')
+          API_URL="https://api.github.com/repos/$OWNER/$REPO/contents/$FILE_PATH"
 
+          FILE_SHA=$(curl -sSL \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: token $GITHUB_TOKEN" \
+            "$API_URL" \
+            | jq -r '.sha // empty')
+          
           PAYLOAD=$(jq -n \
-            --arg message "$COMMIT_MSG" \
-            --arg content "$(echo ${{ steps.get_remote_content.outputs.content }} | jq -r .)" \
+            --arg message "Auto sync PluginMaster - $(date -u +'%Y-%m-%d %H:%M:%S UTC')" \
+            --arg content "${{ steps.get_content.outputs.base64_content }}" \
             --arg sha "$FILE_SHA" \
+            --arg branch "$BRANCH" \
             '{
               message: $message,
-              content: ($content | @base64),
-              sha: $sha
+              content: $content,
+              sha: $sha,
+              branch: $branch
             }')
 
           RESPONSE=$(curl -sSL -X PUT \
+            -H "Accept: application/vnd.github+json" \
             -H "Authorization: token $GITHUB_TOKEN" \
             -H "Content-Type: application/json" \
-            "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/contents/$FILE_PATH" \
+            "$API_URL" \
             -d "$PAYLOAD")
-
+          
           echo "API Response: $RESPONSE"
-
           if echo "$RESPONSE" | jq -e '.commit' > /dev/null; then
-            echo "✅ File synced successfully!"
+            echo "✅ File synced successfully via API!"
           else
-            echo "❌ Sync failed: $(echo "$RESPONSE" | jq -r '.message')"
+            ERROR_MSG=$(echo "$RESPONSE" | jq -r '.message // "Unknown error"')
+            ERROR_DETAILS=$(echo "$RESPONSE" | jq -r '.errors // "No details"')
+            echo "❌ Sync failed: $ERROR_MSG"
+            echo "❌ Error details: $ERROR_DETAILS"
             exit 1
           fi
