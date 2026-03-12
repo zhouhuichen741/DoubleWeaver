@@ -50,7 +50,7 @@ jobs:
             exit 0
           fi
 
-          git commit -m "Auto Sync PluginMaster - $(date +'%Y-%m-%d %H:%M:%S CST')"
+          git commit -m "Auto Sync PluginMaster - $(date +'%Y-%m-%d %H:%M:%S UTC+8' --timezone=Asia/Shanghai)"
 
           git push origin master
           echo "✅ Only $TARGET_FILE synced! All other files are unchanged."
