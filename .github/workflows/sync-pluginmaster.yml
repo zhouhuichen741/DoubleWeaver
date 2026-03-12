@@ -50,7 +50,7 @@ jobs:
             exit 0
           fi
 
-          git commit -m "Auto sync ONLY $TARGET_FILE (raw JSON) - $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
+          git commit -m "Auto Sync PluginMaster"
 
           git push origin master
           echo "✅ Only $TARGET_FILE synced! All other files are unchanged."
