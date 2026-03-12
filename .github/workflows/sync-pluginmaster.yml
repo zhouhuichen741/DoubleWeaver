@@ -1,4 +1,4 @@
-name: Sync Only PluginMaster.json (No Other Files)
+name: Sync PluginMaster
 
 on:
   schedule:
