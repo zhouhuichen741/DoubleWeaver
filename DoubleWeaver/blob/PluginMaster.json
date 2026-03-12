@@ -1,5 +1,5 @@
 [
-  {11
+  {
     "Author": "Sylf", 
     "Name": "Macro Recorded", 
     "InternalName": "MacroRecorded", 
@@ -3831,7 +3831,7 @@
     "FeedbackMessage": null, 
     "FeedbackWebhook": null, 
     "IsTestingExclusive": false, 
-    "DownloadCount": 33113, 
+    "DownloadCount": 33114, 
     "LastUpdate": 1770236510, 
     "DownloadLinkInstall": "https://aonyx.ffxiv.wang/Plugin/Download/ZodiacBuddy?isUpdate=False&isTesting=False&branch=api14", 
     "DownloadLinkUpdate": "https://aonyx.ffxiv.wang/Plugin/Download/ZodiacBuddy?isUpdate=True&isTesting=False&branch=api14", 
