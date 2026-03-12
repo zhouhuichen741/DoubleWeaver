@@ -34,7 +34,7 @@ jobs:
             echo "❌ Error: $TARGET_FILE is empty or not found"
             exit 1
           fi
-          echo "✅ $TARGET_FILE downloaded successfully (raw JSON, no conversion)"
+          echo "✅ $TARGET_FILE downloaded successfully"
 
       - name: Commit only PluginMaster.json changes
         run: |
