@@ -1814,7 +1814,7 @@
     "FeedbackMessage": null, 
     "FeedbackWebhook": null, 
     "IsTestingExclusive": false, 
-    "DownloadCount": 89, 
+    "DownloadCount": 95, 
     "LastUpdate": 1773559895, 
     "DownloadLinkInstall": "https://aonyx.ffxiv.wang/Plugin/Download/RezoPlugin?isUpdate=False&isTesting=False&branch=api14", 
     "DownloadLinkUpdate": "https://aonyx.ffxiv.wang/Plugin/Download/RezoPlugin?isUpdate=True&isTesting=False&branch=api14", 
