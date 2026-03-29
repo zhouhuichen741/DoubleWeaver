@@ -4899,7 +4899,7 @@
     "FeedbackMessage": null, 
     "FeedbackWebhook": null, 
     "IsTestingExclusive": false, 
-    "DownloadCount": 36784, 
+    "DownloadCount": 36785, 
     "LastUpdate": 1664522108, 
     "DownloadLinkInstall": "https://aonyx.ffxiv.wang/Plugin/Download/MiniMappingway?isUpdate=False&isTesting=False&branch=api14", 
     "DownloadLinkUpdate": "https://aonyx.ffxiv.wang/Plugin/Download/MiniMappingway?isUpdate=True&isTesting=False&branch=api14", 
