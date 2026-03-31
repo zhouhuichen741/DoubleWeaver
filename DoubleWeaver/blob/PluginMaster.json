@@ -8816,7 +8816,7 @@
     "FeedbackMessage": null, 
     "FeedbackWebhook": null, 
     "IsTestingExclusive": false, 
-    "DownloadCount": 40531, 
+    "DownloadCount": 40532, 
     "LastUpdate": 1766174507, 
     "DownloadLinkInstall": "https://aonyx.ffxiv.wang/Plugin/Download/TeleporterPlugin?isUpdate=False&isTesting=False&branch=api14", 
     "DownloadLinkUpdate": "https://aonyx.ffxiv.wang/Plugin/Download/TeleporterPlugin?isUpdate=True&isTesting=False&branch=api14", 
