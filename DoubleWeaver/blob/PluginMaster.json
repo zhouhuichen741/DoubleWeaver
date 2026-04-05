@@ -8261,7 +8261,7 @@
     "FeedbackMessage": null, 
     "FeedbackWebhook": null, 
     "IsTestingExclusive": false, 
-    "DownloadCount": 24069, 
+    "DownloadCount": 24070, 
     "LastUpdate": 1766354272, 
     "DownloadLinkInstall": "https://aonyx.ffxiv.wang/Plugin/Download/HarpHero?isUpdate=False&isTesting=False&branch=api14", 
     "DownloadLinkUpdate": "https://aonyx.ffxiv.wang/Plugin/Download/HarpHero?isUpdate=True&isTesting=False&branch=api14", 
