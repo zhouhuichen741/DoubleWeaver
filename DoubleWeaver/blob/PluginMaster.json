@@ -839,7 +839,7 @@
     "FeedbackMessage": null, 
     "FeedbackWebhook": null, 
     "IsTestingExclusive": false, 
-    "DownloadCount": 174364, 
+    "DownloadCount": 174366, 
     "LastUpdate": 1775505494, 
     "DownloadLinkInstall": "https://aonyx.ffxiv.wang/Plugin/Download/SonarPlugin?isUpdate=False&isTesting=False&branch=api14", 
     "DownloadLinkUpdate": "https://aonyx.ffxiv.wang/Plugin/Download/SonarPlugin?isUpdate=True&isTesting=False&branch=api14", 
