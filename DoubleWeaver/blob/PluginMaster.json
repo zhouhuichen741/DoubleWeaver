@@ -16331,7 +16331,7 @@
     "FeedbackMessage": null, 
     "FeedbackWebhook": null, 
     "IsTestingExclusive": false, 
-    "DownloadCount": 76375, 
+    "DownloadCount": 76376, 
     "LastUpdate": 1767583049, 
     "DownloadLinkInstall": "https://aonyx.ffxiv.wang/Plugin/Download/GatherBuddy?isUpdate=False&isTesting=False&branch=api14", 
     "DownloadLinkUpdate": "https://aonyx.ffxiv.wang/Plugin/Download/GatherBuddy?isUpdate=True&isTesting=False&branch=api14", 
