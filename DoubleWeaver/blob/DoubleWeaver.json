@@ -19,7 +19,7 @@
 	},
 	{
         "Author": "goat, Maple",
-        "Name": "Ultrawide Cutscenes",
+        "Name": "Ultrawide Cutscenes Reborn",
         "Punchline": "在宽屏显示器上移除过场动画中的黑边.",
         "Description": "该插件可在超宽显示器上观看过场动画时移除 “黑边” 条。\n注意！你可能会看到本不该出现的内容，例如即将登场的 NPC 突然载入或摆出 T 字姿势。\n\n感谢 aers 发现此方法。",
         "InternalName": "Dalamud.FullscreenCutscenes",
