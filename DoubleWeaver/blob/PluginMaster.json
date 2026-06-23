@@ -9350,7 +9350,7 @@
     "FeedbackMessage": null, 
     "FeedbackWebhook": null, 
     "IsTestingExclusive": false, 
-    "DownloadCount": 99890, 
+    "DownloadCount": 99891, 
     "LastUpdate": 1756644545, 
     "DownloadLinkInstall": "https://aonyx.ffxiv.wang/Plugin/Download/InventoryTools?isUpdate=False&isTesting=False&branch=api15", 
     "DownloadLinkUpdate": "https://aonyx.ffxiv.wang/Plugin/Download/InventoryTools?isUpdate=True&isTesting=False&branch=api15", 
