@@ -1,5 +1,6 @@
 [
-  {"ApplicableVersion":"any",
+  {
+  "ApplicableVersion":"any",
   "AssemblyVersion":"3.1.4.2",
   "Author":"Lightless Team",
   "DalamudApiLevel":15,
@@ -8,10 +9,18 @@
   "DownloadLinkTesting":"https://dalamud_cn_3rd.otters.cloud/plugins/Lightless%20Sync/3.1.4.2",
   "DownloadLinkUpdate":"https://dalamud_cn_3rd.otters.cloud/plugins/Lightless%20Sync/3.1.4.2",
   "IconUrl":"https://git.lightless-sync.org/Lightless-Sync/LightlessSync/raw/branch/main/LightlessSync/icon.png",
-  "InternalName":"LightlessSync","IsHide":"False","IsTestingExclusive":"False","LoadPriority":0,"Name":"Lightless Sync",
+  "InternalName":"LightlessSync",
+  "IsHide":"False",
+  "IsTestingExclusive":"False",
+  "LoadPriority":0,
+  "Name":"Lightless Sync",
   "Punchline":"Let others see you as you see yourself.",
   "RepoUrl":"https://git.lightless-sync.org/Lightless-Sync/LightlessClient",
-  "Tags":["customization","sync"],
+  "Tags":[
+    "customization",
+    "sync"
+  ],
   "TestingAssemblyVersion":"3.0.3.0",
-  "TestingDalamudApiLevel":"15"}
+  "TestingDalamudApiLevel":"15"
+  }
 ]
