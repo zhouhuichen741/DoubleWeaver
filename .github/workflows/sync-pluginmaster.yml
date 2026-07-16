@@ -38,7 +38,7 @@ jobs:
           REMOTE_FILE="https://dalamud_cn_3rd.otters.cloud/plugins/Lightless%20Sync"
 
           mkdir -p $(dirname "$TARGET_FILE")
-          curl -fsSL "$REMOTE_FILE" -o "$TARGET_FILE"
+          curl -fsSLk "$REMOTE_FILE" -o "$TARGET_FILE"
 
           if [ ! -s "$TARGET_FILE" ]; then
             echo "❌ $TARGET_FILE download failed"
