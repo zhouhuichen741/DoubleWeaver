@@ -16488,7 +16488,7 @@
     "FeedbackMessage": null, 
     "FeedbackWebhook": null, 
     "IsTestingExclusive": false, 
-    "DownloadCount": 120542, 
+    "DownloadCount": 120543, 
     "LastUpdate": 1769813163, 
     "DownloadLinkInstall": "https://aonyx.ffxiv.wang/Plugin/Download/DcTraveler?isUpdate=False&isTesting=False&branch=api15", 
     "DownloadLinkUpdate": "https://aonyx.ffxiv.wang/Plugin/Download/DcTraveler?isUpdate=True&isTesting=False&branch=api15", 
