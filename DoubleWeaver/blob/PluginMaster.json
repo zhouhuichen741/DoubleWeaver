@@ -11654,7 +11654,7 @@
     "FeedbackMessage": null, 
     "FeedbackWebhook": null, 
     "IsTestingExclusive": false, 
-    "DownloadCount": 557, 
+    "DownloadCount": 558, 
     "LastUpdate": 1776285832, 
     "DownloadLinkInstall": "https://aonyx.ffxiv.wang/Plugin/Download/MusicalGuide?isUpdate=False&isTesting=False&branch=api15", 
     "DownloadLinkUpdate": "https://aonyx.ffxiv.wang/Plugin/Download/MusicalGuide?isUpdate=True&isTesting=False&branch=api15", 
