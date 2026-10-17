@@ -72,7 +72,7 @@
         "Author": "Tynia",
         "Name": "OptiScaler Switcher",
         "InternalName": "OptiScalerSwitcher",
-        "AssemblyVersion": "1.0.0.0",
+        "AssemblyVersion": "1.0.0.1",
         "Description": "OptiScaler DLSS 档位切换插件",
         "ApplicableVersion": "any",
         "Tags": [
