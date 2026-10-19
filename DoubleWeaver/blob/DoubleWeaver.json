@@ -73,7 +73,7 @@
         "Name": "OptiScaler Switcher",
         "InternalName": "OptiScalerSwitcher",
         "AssemblyVersion": "1.0.0.2",
-        "Description": "OptiScaler DLSS 档位切换插件",
+        "Description": "可以在游戏中使用 OptiScaler 实时切换 DLSS 档位.",
         "ApplicableVersion": "any",
         "Tags": [
             "DLSS",
