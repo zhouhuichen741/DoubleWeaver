@@ -18,7 +18,7 @@ jobs:
           ref: master
           fetch-depth: 1
 
-      - name: Sync PluginMaster (with fallback)
+      - name: Sync PluginMaster
         run: |
           TARGET_FILE="DoubleWeaver/blob/PluginMaster.json"
           REMOTE_FILE="https://aonyx.ffxiv.wang/Plugin/PluginMaster"
@@ -31,13 +31,13 @@ jobs:
 
           if [ $RET -eq 0 ] && [ -s "$TARGET_FILE.tmp" ]; then
             mv "$TARGET_FILE.tmp" "$TARGET_FILE"
-            echo "✅ PluginMaster download success"
+            echo "✅ PluginMaster download success, updated"
           else
             rm -f "$TARGET_FILE.tmp"
-            echo "⚠️ PluginMaster download failed, keep old file"
+            echo "⚠️ PluginMaster download invalid, keep old file"
           fi
 
-      - name: Sync LightlessSync (with fallback)
+      - name: Sync LightlessSync
         run: |
           TARGET_FILE="DoubleWeaver/blob/LightlessSync.json"
           REMOTE_FILE="https://dalamud_cn_3rd.otters.cloud/plugins/Lightless%20Sync"
@@ -50,10 +50,10 @@ jobs:
 
           if [ $RET -eq 0 ] && [ -s "$TARGET_FILE.tmp" ]; then
             mv "$TARGET_FILE.tmp" "$TARGET_FILE"
-            echo "✅ LightlessSync download success"
+            echo "✅ LightlessSync download success, updated"
           else
             rm -f "$TARGET_FILE.tmp"
-            echo "⚠️ LightlessSync download failed, keep old file"
+            echo "⚠️ LightlessSync got error/empty, DO NOT touch original file"
           fi
 
       - name: Commit and push changes
