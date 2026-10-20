@@ -25,7 +25,7 @@ jobs:
           UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 
           mkdir -p $(dirname "$TARGET_FILE")
-          curl -fsSL --connect-timeout 15 -A "$UA" "$REMOTE_FILE" -o "$TARGET_FILE.tmp"
+          curl -sSL --connect-timeout 15 -A "$UA" "$REMOTE_FILE" -o "$TARGET_FILE.tmp"
           RET=$?
           echo "PluginMaster curl exit code: $RET"
 
@@ -44,7 +44,7 @@ jobs:
           UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 
           mkdir -p $(dirname "$TARGET_FILE")
-          curl -fsSL --connect-timeout 15 -A "$UA" "$REMOTE_FILE" -o "$TARGET_FILE.tmp"
+          curl -sSL --connect-timeout 15 -A "$UA" "$REMOTE_FILE" -o "$TARGET_FILE.tmp"
           RET=$?
           echo "LightlessSync curl exit code: $RET"
 
