@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 jobs:
-  sync-single-file:
+  sync-all:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
@@ -18,33 +18,43 @@ jobs:
           ref: master
           fetch-depth: 1
 
-      - name: Sync original PluginMaster
+      - name: Sync PluginMaster (with fallback)
         run: |
           TARGET_FILE="DoubleWeaver/blob/PluginMaster.json"
           REMOTE_FILE="https://aonyx.ffxiv.wang/Plugin/PluginMaster"
+          UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 
           mkdir -p $(dirname "$TARGET_FILE")
-          curl -fsSL "$REMOTE_FILE" -o "$TARGET_FILE"
+          curl -fsSL --connect-timeout 15 -A "$UA" "$REMOTE_FILE" -o "$TARGET_FILE.tmp"
+          RET=$?
+          echo "PluginMaster curl exit code: $RET"
 
-          if [ ! -s "$TARGET_FILE" ]; then
-            echo "❌ $TARGET_FILE download failed"
-            exit 1
+          if [ $RET -eq 0 ] && [ -s "$TARGET_FILE.tmp" ]; then
+            mv "$TARGET_FILE.tmp" "$TARGET_FILE"
+            echo "✅ PluginMaster download success"
+          else
+            rm -f "$TARGET_FILE.tmp"
+            echo "⚠️ PluginMaster download failed, keep old file"
           fi
-          echo "✅ Synced PluginMaster.json"
 
-      - name: Sync LightlessSync
+      - name: Sync LightlessSync (with fallback)
         run: |
           TARGET_FILE="DoubleWeaver/blob/LightlessSync.json"
           REMOTE_FILE="https://dalamud_cn_3rd.otters.cloud/plugins/Lightless%20Sync"
+          UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 
           mkdir -p $(dirname "$TARGET_FILE")
-          curl -fsSL "$REMOTE_FILE" -o "$TARGET_FILE"
+          curl -fsSL --connect-timeout 15 -A "$UA" "$REMOTE_FILE" -o "$TARGET_FILE.tmp"
+          RET=$?
+          echo "LightlessSync curl exit code: $RET"
 
-          if [ ! -s "$TARGET_FILE" ]; then
-            echo "❌ $TARGET_FILE download failed"
-            exit 1
+          if [ $RET -eq 0 ] && [ -s "$TARGET_FILE.tmp" ]; then
+            mv "$TARGET_FILE.tmp" "$TARGET_FILE"
+            echo "✅ LightlessSync download success"
+          else
+            rm -f "$TARGET_FILE.tmp"
+            echo "⚠️ LightlessSync download failed, keep old file"
           fi
-          echo "✅ Synced LightlessSync.json"
 
       - name: Commit and push changes
         run: |
@@ -61,5 +71,4 @@ jobs:
 
           git commit -m "Auto Sync - $(TZ=Asia/Shanghai date +'%Y-%m-%d %H:%M:%S')"
           git push origin master
-
-          echo "✅ All files synced successfully!"
+          echo "✅ Sync finished"
