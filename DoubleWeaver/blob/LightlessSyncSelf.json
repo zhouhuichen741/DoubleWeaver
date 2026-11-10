@@ -1,7 +1,7 @@
 [
     {
         "ApplicableVersion": "any",
-        "AssemblyVersion": "3.3.1.1",
+        "AssemblyVersion": "3.3.1.2",
         "Author": "Lightless Team",
         "DalamudApiLevel": 15,
         "Description": "This plugin will synchronize your Penumbra mods and current Glamourer state with other paired clients automatically.",
