@@ -18,48 +18,6 @@
         "DownloadLinkUpdate": "https://raw.githubusercontent.com/zhouhuichen741/dalamud-plugins/master/plugins/PeepingTomS/PeepingTomS.zip"
 	},
 	{
-        "Author": "tynia",
-        "Name": "Key King",
-        "Punchline": "自动完成打字小游戏",
-        "Description": "自动完成打字小游戏：进入魔光键影打字游戏后，自动读取敌人名字并直接注入输入框完成输入，支持自定义运行间隔。",
-        "InternalName": "KeyKing",
-        "AssemblyVersion": "1.0.1.8",
-        "ApplicableVersion": "any",
-        "DalamudApiLevel": 15,
-        "IsHide": "False",
-        "IsTestingExclusive": "False",
-        "DownloadCount": 0,
-        "LastUpdate": 0,
-        "LoadPriority": 69420,
-        "DownloadLinkInstall": "https://raw.githubusercontent.com/zhouhuichen741/dalamud-plugins/master/plugins/KeyKing/KeyKing.zip",
-        "DownloadLinkTesting": "https://raw.githubusercontent.com/zhouhuichen741/dalamud-plugins/master/plugins/KeyKing/KeyKing.zip",
-        "DownloadLinkUpdate": "https://raw.githubusercontent.com/zhouhuichen741/dalamud-plugins/master/plugins/KeyKing/KeyKing.zip"
-	},
-	{
-        "Author": "Tynia",
-        "Name": "Tynia PVP Radar",
-        "InternalName": "TyniaPVPRadar",
-        "AssemblyVersion": "1.0.10.16",
-        "Punchline": "PVP小助手（在线安装 Only）",
-        "Description": "在PVP地图中显示所有玩家信息，支持连线、标记和关注列表功能",
-        "ApplicableVersion": "any",
-        "Tags": [
-            "PVP",
-            "Radar",
-            "Player"
-        ],
-        "DalamudApiLevel": 15,
-        "IsHide": "False",
-        "IsTestingExclusive": "False",
-        "DownloadCount": 0,
-        "LastUpdate": 0,
-        "LoadPriority": 69420,
-        "IconUrl": "https://raw.githubusercontent.com/zhouhuichen741/dalamud-plugins/master/plugins/TyniaPVPRadar/icon.png",
-        "DownloadLinkInstall": "https://raw.githubusercontent.com/zhouhuichen741/dalamud-plugins/master/plugins/TyniaPVPRadar/TyniaPVPRadar.zip",
-        "DownloadLinkTesting": "https://raw.githubusercontent.com/zhouhuichen741/dalamud-plugins/master/plugins/TyniaPVPRadar/TyniaPVPRadar.zip",
-        "DownloadLinkUpdate": "https://raw.githubusercontent.com/zhouhuichen741/dalamud-plugins/master/plugins/TyniaPVPRadar/TyniaPVPRadar.zip"
-	},
-	{
         "Author": "Bluefissure",
         "Name": "Double Weaver Ex Hack",
         "InternalName": "DoubleWeaver",
